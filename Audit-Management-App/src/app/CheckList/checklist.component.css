@@ -146,7 +146,8 @@ section{
 }
 
 .main{
-    background: linear-gradient(to right, #b92b27, #1565c0);
+    /*background: linear-gradient(to right, #b92b27, #1565c0);*/
+    background: linear-gradient(to right, #159957, #155799);
     position: absolute;
     z-index: -1;
     top:0px;
