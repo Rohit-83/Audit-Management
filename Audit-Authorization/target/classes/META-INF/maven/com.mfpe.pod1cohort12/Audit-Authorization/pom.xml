@@ -8,13 +8,14 @@
 		<version>2.5.2</version>
 		<relativePath/> <!-- lookup parent from repository -->
 	</parent>
-	<groupId>com.mfpe.pod2cohort25</groupId>
+	<groupId>com.mfpe.pod1cohort12</groupId>
 	<artifactId>Audit-Authorization</artifactId>
 	<version>0.0.1-SNAPSHOT</version>
 	<name>Audit-Authorization</name>
 	<description>Audit Authorization Microservice for MFPE</description>
 	<properties>
 		<java.version>11</java.version>
+		<spring-cloud.version>2020.0.6</spring-cloud.version>
 	</properties>
 	<dependencies>
 		<dependency>
@@ -80,6 +81,10 @@
         	<artifactId>hibernate-validator</artifactId>
         	<version>6.0.13.Final</version>
     	</dependency> 
+		<dependency>
+			<groupId>org.springframework.cloud</groupId>
+			<artifactId>spring-cloud-starter-netflix-eureka-client</artifactId>
+		</dependency>
 	</dependencies>
 	
 	<!-- JAR CREATION -->
@@ -101,4 +106,15 @@
 		</plugins>
 	</build>
 
+	<dependencyManagement>
+		<dependencies>
+			<dependency>
+				<groupId>org.springframework.cloud</groupId>
+				<artifactId>spring-cloud-dependencies</artifactId>
+				<version>${spring-cloud.version}</version>
+				<type>pom</type>
+				<scope>import</scope>
+			</dependency>
+		</dependencies>
+	</dependencyManagement>
 </project>
