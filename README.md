@@ -1,23 +1,23 @@
 # CDE-MFPE-Project-Audit-Management-System
 
 ## Authors :
-
+### POD 1: Cohort 12
 <table>
   <tr>
       <td>
-        <a href="https://github.com/DRoy7">Deep Roy</a>
+        <a href="#">Sachin Babasaheb Banker</a>
         </td>
       <td>
-        <a href="https://github.com/sriharish252">Sri Harish</a>
+        <a href="#">Rohit Kumar</a>
         </td>
       <td>
-        <a href="https://github.com/Kamalesh8">Kamalesh R</a>
+        <a href="#">Abhishek Sharma</a>
         </td>
       <td>
-        <a href="https://github.com/Megha0699">Megha S</a>
+        <a href="#">Ishita Kumari</a>
         </td>
       <td>
-        <a href="https://github.com/greninja199">Praduman Kumar</a>
+        <a href="#">Ayan Chattopadhyay</a>
         </td>
     </tr>
 </table>
