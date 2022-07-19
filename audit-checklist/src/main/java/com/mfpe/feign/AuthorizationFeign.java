@@ -7,7 +7,10 @@ import org.springframework.web.bind.annotation.RequestHeader;
 
 import com.mfpe.model.AuthenticationResponse;
 
-@FeignClient(name="Authorization-Ms", url = "${ms.auth}")
+//@FeignClient(name="Authorization-Ms", url = "${ms.auth}")
+
+
+@FeignClient(name="AUDIT-AUTHORIZATION/auth")
 public interface AuthorizationFeign{
 
 	@PostMapping("/validate")

@@ -11,7 +11,9 @@ import org.springframework.web.bind.annotation.RequestMethod;
 import com.mfpe.model.AuditType;
 import com.mfpe.model.AuditQuestion;
 
-@FeignClient(url = "${ms.checklist}", name="auditChecklist")
+//@FeignClient(url = "${ms.checklist}", name="auditChecklist")
+
+@FeignClient(name="AUDUT-CHECKLIST/checklist")
 public interface AuditCheckListFeign {
 	
 	@RequestMapping(value = "/AuditCheckListQuestions", method = RequestMethod.POST )
