@@ -14,7 +14,7 @@ export class AuthorizationMSClientService {
   }
 
   getProjectDetails(securityToken : SecurityToken){
-    let token : string = securityToken.jwt;
+    let token : string = securityToken.Jwt;
     // make rest call to /validate with token as Request-header
   }
 }
