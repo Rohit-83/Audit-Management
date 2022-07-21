@@ -1,4 +1,6 @@
 import { Component, OnInit } from '@angular/core';
+import { SecurityService } from './../Services/security.service';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-server-error',
@@ -7,10 +9,20 @@ import { Component, OnInit } from '@angular/core';
 })
 export class ServerErrorComponent implements OnInit {
 
-  constructor() { }
+  constructor(
+    private router : Router,
+    private securityService : SecurityService
+  ) { }
 
   ngOnInit(): void {
     
   }
+
+  
+  goBack(){
+    this.securityService.resetAll();
+    this.router.navigate(["login"]);
+  }
+
 
 }

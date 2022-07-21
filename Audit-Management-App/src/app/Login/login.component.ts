@@ -31,7 +31,6 @@ export class LoginComponent implements OnInit {
       },
       (err)=>{
         this.securityService.resetAll();
-        console.log(err);
         this.router.navigate(['error']);
       },
       ()=>{
