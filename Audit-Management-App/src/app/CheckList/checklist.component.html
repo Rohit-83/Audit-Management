@@ -10,7 +10,7 @@
             <option value="SOX">SOX</option>
         </select>
         <br><br>
-        <input class="btn1 btn-info bigbtn" type="submit" value="See Questions" (click)="getQuestions()">
+        <input class="btn1 btn-info bigbtn" type="submit" value="See Questions" (click)="getQuestions()" style="color: white;">
     </div>
     <div class="d-flex justify-content-center container qdiv py-3" *ngIf="loadFlag && questions.length==0">
         <div class="spinner-border" role="status">
@@ -18,7 +18,7 @@
         </div>
     </div>
     </form>
-    <div class="container qdiv" *ngIf="questions.length>0">
+    <div class="container qdiv" *ngIf="questions.length>0" style="margin-top: 50px;">
         <table class="box2" >
             <!--We can use "box2" and add rows by using a default format "<tr>", last one will be different, so last one will have to be assigned separately-->
             <tr>
@@ -37,7 +37,7 @@
             </tr>
         </table>
         <div class="qdivbtn">
-            <button type="submit" class="btn btn-info lastbtn" (click)="getResponse()">Submit</button>
+            <button type="submit" class="btn btn-info lastbtn" (click)="getResponse()" style="color: white;" >Submit</button>
         </div>
         <div class="alert alert-warning error-message" role="alert" *ngIf="message.length>0">
             {{ message }}
