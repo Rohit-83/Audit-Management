@@ -1,4 +1,7 @@
-# CDE-MFPE-Project-Audit-Management-System
+<div align="center">
+<img src="https://github.com/Rohit-83/Audit-Management/blob/main/additionalAssets/logo.png?raw=true" width="100px" height="100px" vertical-align="middle">
+<h1>CDE MFPE Project- Audit Management System</h1>
+</div>
 
 ## Authors :
 ### POD 1: Cohort 12
@@ -22,7 +25,7 @@
     </tr>
 </table>
 
-## Overview::
+## Overview:
 
 * ### How to run this project || Execution :
   #### --Dependencies on Other microsevices : ** You should have Java 8 or any version above that, maven, angular-cli - to run this project**
