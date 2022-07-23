@@ -50,7 +50,7 @@
     * #### 7> The audit response detail along with the project execution status and remedial action duration should be saved to the database
     
 * ### Internal connectivity of the Audit Management App and the Microservices : 
-    ![Internal Connectivity of the App](additionalAssets/flow.png)
+    ![Internal Connectivity of the App](additionalAssets/Flow.png)
 
 * ### Preview Of The Application : 
     * #### Login Page -
