@@ -12,6 +12,7 @@ import org.springframework.web.bind.annotation.RequestHeader;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
+import com.mfpe.exception.FailedJwtValidation;
 import com.mfpe.model.AuditBenchmark;
 import com.mfpe.service.AuditBenchmarkService;
 import com.mfpe.service.AuthorizationService;
@@ -32,7 +33,7 @@ public class AuditBenchmarkController {
 	
 	// Endpoint to retrieve the Audit Benchmark details
 	@GetMapping("/AuditBenchmark")
-	public List<AuditBenchmark> getAuditBenchmark(@RequestHeader("Authorization") String jwt) {
+	public List<AuditBenchmark> getAuditBenchmark(@RequestHeader("Authorization") String jwt) throws FailedJwtValidation {
 		List<AuditBenchmark> auditBenchmarks = new ArrayList<>();
 		
 		// checking if the jwt is valid or not
@@ -42,6 +43,7 @@ public class AuditBenchmarkController {
 		}
 		else {
 			logger.error("Failed to validate the JWT :: " + jwt);
+			throw new FailedJwtValidation();
 		}
 		return auditBenchmarks;
 	}

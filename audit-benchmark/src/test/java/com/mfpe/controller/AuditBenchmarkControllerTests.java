@@ -12,6 +12,7 @@ import org.mockito.InjectMocks;
 import org.mockito.Mock;
 import org.springframework.boot.test.context.SpringBootTest;
 
+import com.mfpe.exception.FailedJwtValidation;
 import com.mfpe.model.AuditBenchmark;
 import com.mfpe.service.AuditBenchmarkService;
 import com.mfpe.service.AuthorizationService;
@@ -39,7 +40,7 @@ class AuditBenchmarkControllerTests {
 	}
 	
 	@Test
-	public void testGetAuditBenchmark() {
+	public void testGetAuditBenchmark() throws FailedJwtValidation {
 		List<AuditBenchmark> auditBenchmarkList = new ArrayList<>();
 		auditBenchmarkList.add(new AuditBenchmark(1,"Internal",3));
 		auditBenchmarkList.add(new AuditBenchmark(2,"SOX",1));
