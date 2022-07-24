@@ -2,12 +2,15 @@ package com.mfpe.controller;
 
 import java.util.ArrayList;
 import java.util.List;
+import java.util.Map;
 
 import javax.validation.Valid;
 
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.http.HttpStatus;
+import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.CrossOrigin;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.RequestBody;
@@ -37,7 +40,7 @@ public class AuditChecklistController {
 	
 	// Endpoint for retrieving the questions from the DB 
 	@RequestMapping(value = "/AuditCheckListQuestions", method = {RequestMethod.GET, RequestMethod.POST} )
-	public List<Question> auditCheckListQuestions(@RequestHeader("Authorization") String jwt, @RequestBody AuditType auditType) {
+	public ResponseEntity<List<Question>> auditCheckListQuestions(@RequestHeader("Authorization") String jwt, @RequestBody AuditType auditType) {
 		List<Question> questions = new ArrayList<Question>();
 		
 		logger.info("from header JWT :: " + jwt);
@@ -49,12 +52,12 @@ public class AuditChecklistController {
 		else {
 			logger.error("Failed to validate the JWT :: " + jwt);
 		}
-		return questions;
+		return ResponseEntity.ok(questions);
 	}
 	
 	// Endpoint to check if the microservice is active
 	@GetMapping("/health-check")
-	public String healthCheck() {
-		return "Audit Checklist Microservice is Active";
+	public ResponseEntity<Map<String,String>> healthCheck() {
+		return new ResponseEntity<Map<String,String>>(Map.of("message","Audit Checklist Microservice is Active"),HttpStatus.OK);
 	}
 }
