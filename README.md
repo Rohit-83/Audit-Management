@@ -1,4 +1,7 @@
-# CDE-MFPE-Project-Audit-Management-System
+<div align="center">
+<img src="https://github.com/Rohit-83/Audit-Management/blob/main/additionalAssets/logo.png?raw=true" width="100px" height="100px" vertical-align="middle">
+<h1>CDE MFPE Project- Audit Management System</h1>
+</div>
 
 ## Authors :
 ### POD 1: Cohort 12
@@ -22,7 +25,7 @@
     </tr>
 </table>
 
-## Overview::
+## Overview:
 
 * ### How to run this project || Execution :
   #### --Dependencies on Other microsevices : ** You should have Java 8 or any version above that, maven, angular-cli - to run this project**
@@ -47,10 +50,15 @@
     * #### 7> The audit response detail along with the project execution status and remedial action duration should be saved to the database
     
 * ### Internal connectivity of the Audit Management App and the Microservices : 
-    ![Internal Connectivity of the App](additionalAssets/flow.png)
+    ![Internal Connectivity of the App](additionalAssets/Flow.png)
 
-* ### Screenshots : 
-    ![Login Screen](additionalAssets/login.png)
-    ![Login Screen](additionalAssets/checklist.png)
-    ![Login Screen](additionalAssets/status.png)
+* ### Preview Of The Application : 
+    * #### Login Page -
+    ![Login Screen](additionalAssets/Login.png)
+    * #### Audit Checklist Page-
+    ![Checklist Screen](additionalAssets/Checklist.png)
+    * #### Audit Result Page -
+    ![Audit Result Screen](additionalAssets/Result.png)
+    * #### Incase of any error -
+    ![Error Screen](additionalAssets/Error.png)
     
