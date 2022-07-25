@@ -4,6 +4,7 @@ import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 
 import java.util.List;
+import java.util.Map;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
@@ -43,8 +44,8 @@ public class AuditSeverityController {
 
 	//This is to check the microservice is working or not 
 	@GetMapping("/health-check")
-	public String healthCheck() {
-		return "Audit Severity Microservice is Active";
+	public ResponseEntity<Map<String,String>> healthCheck() {
+		return new ResponseEntity<Map<String,String>>(Map.of("message","Audit Severity Microservice is Active"),HttpStatus.OK);
 	}
 	
 	//This is to check the severity of the audit and it returns the execution status of the project

@@ -2,10 +2,13 @@ package com.mfpe.controller;
 
 import java.util.ArrayList;
 import java.util.List;
+import java.util.Map;
 
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.http.HttpStatus;
+import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.CrossOrigin;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.RequestHeader;
@@ -33,7 +36,7 @@ public class AuditBenchmarkController {
 	
 	// Endpoint to retrieve the Audit Benchmark details
 	@GetMapping("/AuditBenchmark")
-	public List<AuditBenchmark> getAuditBenchmark(@RequestHeader("Authorization") String jwt) throws FailedJwtValidation {
+	public ResponseEntity<List<AuditBenchmark>> getAuditBenchmark(@RequestHeader("Authorization") String jwt) throws FailedJwtValidation {
 		List<AuditBenchmark> auditBenchmarks = new ArrayList<>();
 		
 		// checking if the jwt is valid or not
@@ -45,13 +48,13 @@ public class AuditBenchmarkController {
 			logger.error("Failed to validate the JWT :: " + jwt);
 			throw new FailedJwtValidation();
 		}
-		return auditBenchmarks;
+		return new ResponseEntity<List<AuditBenchmark>>(auditBenchmarks,HttpStatus.OK);
 	}
 	
 	// Endpoint to check if the microservice is live
 	@GetMapping("/health-check")
-	public String healthCheck() {
-		return "Audit Benchmark Microservice is Active";
+	public ResponseEntity<Map<String,String>> healthCheck() {
+		return new ResponseEntity<Map<String,String>>(Map.of("message","Audit Benchmark Microservice is Active"),HttpStatus.OK);
 	}
 	
 }

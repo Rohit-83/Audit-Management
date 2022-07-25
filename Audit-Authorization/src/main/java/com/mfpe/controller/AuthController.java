@@ -1,5 +1,7 @@
 package com.mfpe.controller;
 
+import java.util.Map;
+
 import javax.validation.Valid;
 
 import org.slf4j.Logger;
@@ -40,8 +42,8 @@ public class AuthController {
 	Logger logger = LoggerFactory.getLogger("Auth-Controller-Logger");
 	
 	@GetMapping("/health-check")
-	public ResponseEntity<String> healthCheck(){	// for Health check [PERMITTED FOR ALL]
-		return new ResponseEntity<String>("Audit-Authorization MS Running Fine!!", HttpStatus.OK);
+	public ResponseEntity<Map<String,String>> healthCheck() {
+		return new ResponseEntity<Map<String,String>>(Map.of("message","Audit Authorization Microservice is Active"),HttpStatus.OK);
 	}
 	
 	// authentication - for the very first login
