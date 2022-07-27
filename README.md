@@ -51,6 +51,9 @@
     
 * ### Internal connectivity of the Audit Management App and the Microservices : 
     ![Internal Connectivity of the App](additionalAssets/Flow.png)
+    
+* ### JWT Processing at Each Microservice : 
+    ![JWT Processing at Each Microservice](additionalAssets/DetailedFlow.png)
 
 * ### Preview Of The Application : 
     * #### Login Page -
@@ -59,6 +62,7 @@
     ![Checklist Screen](additionalAssets/Checklist.png)
     * #### Audit Result Page -
     ![Audit Result Screen](additionalAssets/Result.png)
-    * #### Incase of any error -
+    * #### Incase of Error -
     ![Error Screen](additionalAssets/Error.png)
+    ![Error Screen](additionalAssets/ErrorPage.png)
     
