@@ -5,7 +5,7 @@
 <table>
   <tr>
       <td>
-        <a href="#">Sachin Babasaheb Banker</a>
+        <a href="#">Sachin Babasaheb Bankar</a>
         </td>
       <td>
         <a href="#">Rohit Kumar</a>
@@ -59,7 +59,7 @@
   * #### --Dependencies on Other microsevices : **None**
 
   * #### --Application Properties Toggle :<br/>
-      JAR name = MFPE-AuthorizationMS-JAR<br/>
+      JAR name = ay-authorization<br/>
       server.port=8100<br/>
       server.servlet.context-path=/auth<br/>
       User Database : H2(In-Memory)<br/>

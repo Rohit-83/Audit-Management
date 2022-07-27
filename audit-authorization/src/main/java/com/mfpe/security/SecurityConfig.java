@@ -50,7 +50,7 @@ public class SecurityConfig extends WebSecurityConfigurerAdapter{
 		http
 		.csrf().disable()
 		.authorizeRequests()
-		.antMatchers("/auth/health-check", "/auth/authenticate", "/auth/validate","/swagger-ui/**","/v3/**","/h2-console/**").permitAll()
+		.antMatchers("/auth/health-check", "/auth/authenticate", "/auth/validate","/swagger-ui/**","/v3/**","/db").permitAll()
 		.anyRequest().authenticated()
 		.and()
 		.sessionManagement().sessionCreationPolicy(SessionCreationPolicy.STATELESS);	// stopping default session creation
