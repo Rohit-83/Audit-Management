@@ -1,9 +1,4 @@
 FROM openjdk:11
 EXPOSE 8250
-ADD target/benchmarkjar.jar benchmarkjar.jar
-ENTRYPOINT ["java","-jar","/benchmarkjar.jar"]
-
-#FROM openjdk:11
-#EXPOSE 8250
-#ADD target/ay-benchmarkjar-cloudauth.jar ay-benchmarkjar-cloudauth.jar
-#ENTRYPOINT ["java","-jar","/ay-benchmarkjar-cloudauth.jar"]
+ADD target/ay-benchmark.jar ay-benchmark.jar
+ENTRYPOINT ["java","-jar","/ay-benchmark.jar"]

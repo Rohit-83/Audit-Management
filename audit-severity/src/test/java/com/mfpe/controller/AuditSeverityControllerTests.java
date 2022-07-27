@@ -7,6 +7,7 @@ import static org.mockito.Mockito.when;
 import java.util.ArrayList;
 import java.util.Date;
 import java.util.List;
+import java.util.Map;
 
 import org.junit.jupiter.api.Test;
 import org.mockito.InjectMocks;
@@ -78,7 +79,7 @@ class AuditSeverityControllerTests {
 	
 	@Test
 	public void testAuditHealthCheck() {
-		assertEquals(severityController.healthCheck(),"Audit Severity Microservice is Active");
+		assertEquals(severityController.healthCheck(),new ResponseEntity<Map<String,String>>(Map.of("message","Audit Severity Microservice is Active"),HttpStatus.OK));
 	}
 	
 	

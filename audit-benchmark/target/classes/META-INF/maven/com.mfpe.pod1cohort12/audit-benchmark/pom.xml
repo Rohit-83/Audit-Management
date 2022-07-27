@@ -76,7 +76,7 @@
 	</dependencies>
 
 	<build>
-	<finalName>benchmarkjar</finalName> 
+	<finalName>ay-benchmark</finalName> 
 	<!-- <finalName>ay-benchmarkjar-cloudauth</finalName>-->
 		<plugins>
 			<plugin>
