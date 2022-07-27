@@ -76,7 +76,8 @@
 	</dependencies>
 
 	<build>
-	<finalName>MFPE-BenchmarkMS-JAR</finalName>
+	<finalName>benchmarkjar</finalName> 
+	<!-- <finalName>ay-benchmarkjar-cloudauth</finalName>-->
 		<plugins>
 			<plugin>
 				<groupId>org.springframework.boot</groupId>
