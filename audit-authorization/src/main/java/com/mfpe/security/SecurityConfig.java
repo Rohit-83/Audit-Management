@@ -51,6 +51,7 @@ public class SecurityConfig extends WebSecurityConfigurerAdapter{
 		.csrf().disable()
 		.authorizeRequests()
 		.antMatchers("/auth/health-check","/auth/db", "/auth/authenticate", "/auth/validate","/swagger-ui/**","/v3/**","/db").permitAll()
+		.antMatchers("/auth/db/**").permitAll()
 		.anyRequest().authenticated()
 		.and()
 		.sessionManagement().sessionCreationPolicy(SessionCreationPolicy.STATELESS);	// stopping default session creation
@@ -59,7 +60,8 @@ public class SecurityConfig extends WebSecurityConfigurerAdapter{
 	}
 	@Override
 	public void configure(WebSecurity web) throws Exception {
-		web.ignoring().antMatchers("/v2/api-docs","/configuration/ui",
+		web.ignoring().antMatchers("/v2/api-docs","/configuration/ui","/auth/db/**",
 				"/swagger-resources/**","/configuration/security","/swagger-ui.html","/webjars/**","/auth/swagger");
 	}
+	
 }
