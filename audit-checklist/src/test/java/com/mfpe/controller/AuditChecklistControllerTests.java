@@ -6,11 +6,14 @@ import static org.mockito.Mockito.when;
 
 import java.util.ArrayList;
 import java.util.List;
+import java.util.Map;
 
 import org.junit.jupiter.api.Test;
 import org.mockito.InjectMocks;
 import org.mockito.Mock;
 import org.springframework.boot.test.context.SpringBootTest;
+import org.springframework.http.HttpStatus;
+import org.springframework.http.ResponseEntity;
 
 import com.mfpe.model.AuditType;
 import com.mfpe.model.Question;
@@ -36,7 +39,7 @@ public class AuditChecklistControllerTests {
 	
 	@Test
 	public void testHealthCheck() {
-		assertEquals("Audit Checklist Microservice is Active", controller.healthCheck());
+		assertEquals(new ResponseEntity<Map<String,String>>(Map.of("message","Audit Checklist Microservice is Active"),HttpStatus.OK), controller.healthCheck());
 	}
 	
 	@Test
@@ -49,7 +52,7 @@ public class AuditChecklistControllerTests {
 		AuditType auditType = new AuditType("auditType");
 		when(questionService.getQuestionsByAuditType(auditType)).thenReturn(questions);
 		
-		assertEquals(questions, controller.auditCheckListQuestions("jwt", auditType));		
+		assertEquals(ResponseEntity.ok(questions), controller.auditCheckListQuestions("jwt", auditType));		
 	}
 	
 }

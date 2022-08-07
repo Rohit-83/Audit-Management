@@ -76,7 +76,7 @@
 	</dependencies>
 
 	<build>
-	<finalName>MFPE-ChecklistMS-JAR</finalName>
+	<finalName>ay-checklist</finalName>
 		<plugins>
 			<plugin>
 				<groupId>org.springframework.boot</groupId>

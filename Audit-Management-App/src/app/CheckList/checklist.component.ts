@@ -30,7 +30,9 @@ export class ChecklistComponent implements OnInit {
         (data)=>{
           fetch = data;
           if(data.length == 0){
-            this.router.navigate(["backToLogin"]);
+            //this.router.navigate(["backToLogin"]);
+             //this.router.navigate(["checklist"]);
+            this.redirectTo("checklist");
           }
         }, 
         (err)=>{this.router.navigate(["error"])}, 
@@ -40,7 +42,10 @@ export class ChecklistComponent implements OnInit {
         }
       );
   }
-
+    redirectTo(uri:string){
+    this.router.navigateByUrl('/', {skipLocationChange: true}).then(()=>
+    this.router.navigate([uri]));
+ }
   connectionCheck() : void {
     this.checklistService.healthCheck().subscribe(data=>this.connectionStatus=data);
   }

@@ -6,11 +6,14 @@ import static org.mockito.Mockito.when;
 
 import java.util.ArrayList;
 import java.util.List;
+import java.util.Map;
 
 import org.junit.jupiter.api.Test;
 import org.mockito.InjectMocks;
 import org.mockito.Mock;
 import org.springframework.boot.test.context.SpringBootTest;
+import org.springframework.http.HttpStatus;
+import org.springframework.http.ResponseEntity;
 
 import com.mfpe.exception.FailedJwtValidation;
 import com.mfpe.model.AuditBenchmark;
@@ -36,7 +39,7 @@ class AuditBenchmarkControllerTests {
 	
 	@Test
 	public void testHealthCheck() {
-		assertEquals("Audit Benchmark Microservice is Active",controller.healthCheck());
+		assertEquals(new ResponseEntity<Map<String,String>>(Map.of("message","Audit Benchmark Microservice is Active"),HttpStatus.OK),controller.healthCheck());
 	}
 	
 	@Test
@@ -49,7 +52,7 @@ class AuditBenchmarkControllerTests {
 		
 		when(auditBenchmarkService.getAuditBenchmarkList()).thenReturn(auditBenchmarkList);
 		
-		assertEquals(auditBenchmarkList, controller.getAuditBenchmark("jwt"));
+		assertEquals(new ResponseEntity<List<AuditBenchmark>>(auditBenchmarkList,HttpStatus.OK), controller.getAuditBenchmark("jwt"));
 	}
 	
 }
